@@ -1,10 +1,14 @@
 import { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
+
 import reactLogo from '/infLogoBlack.ico'
 import viteLogo from '/infLogo.ico'
 import './Vite.css'
 
 export default function Vite() {
   const [count, setCount] = useState(0)
+  const navigate = useNavigate()
+  const goToPage = (page)=>{navigate(page)} 
 
   return (
     <>
@@ -24,6 +28,7 @@ export default function Vite() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
+        <button onClick={()=>goToPage("/")}> Home </button>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
