@@ -3,7 +3,7 @@ import reactLogo from '/infLogoBlack.ico'
 import viteLogo from '/infLogo.ico'
 import './Vite.css'
 
-function Home() {
+export default function Vite() {
   const [count, setCount] = useState(0)
 
   return (
@@ -31,5 +31,3 @@ function Home() {
     </>
   )
 }
-
-export default Home
