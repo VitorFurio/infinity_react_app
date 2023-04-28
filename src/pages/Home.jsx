@@ -3,13 +3,15 @@ import {useNavigate} from "react-router-dom"
 export default function Home() {
 
     const navigate = useNavigate();
-    function goToPage(page){
-        navigate(page);
-    }
+    const goToPage = (page)=>{navigate(page)} 
+     // function goToPage(page){
+    //     navigate(page);
+    // } mesma coisa que a linha de cima
   return (
     <>
       <h3>Hello</h3>
-      <button onClick={()=>goToPage("/Vite")}> Ola</button>
+      <button onClick={()=>goToPage("/Vite")}> Vite</button>
+      <button onClick={()=>goToPage("/Connect")}> Conectar</button>
     </>
   )
 }
