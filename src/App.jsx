@@ -9,6 +9,7 @@ import { polygonMumbai, mainnet, polygon } from 'wagmi/chains'
 import Vite from './pages/Vite'
 import Home from './pages/Home';
 import Connect from './pages/Connect'
+import UserPage from './pages/UserPage';
 
 const chains = [mainnet, polygon, polygonMumbai]
 const projectId = 'ba7804e457fbb5f1375cbdc14e679617'
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/" element={<Home/>} />
         <Route path="/Vite" element={<Vite/>} />
         <Route path="/Connect" element={<Connect/>} />
+        <Route path="/User" element={<UserPage/>} />
 
       </Routes>
     </BrowserRouter>

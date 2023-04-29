@@ -12,6 +12,7 @@ export default function Home() {
       <h3>Hello</h3>
       <button onClick={()=>goToPage("/Vite")}> Vite</button>
       <button onClick={()=>goToPage("/Connect")}> Conectar</button>
+      <button onClick={()=>goToPage("/User")}> Usuario</button>
     </>
   )
 }
