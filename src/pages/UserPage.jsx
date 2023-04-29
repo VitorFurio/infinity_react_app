@@ -6,7 +6,7 @@ export default function UserPage() {
 
     const navigate = useNavigate();
     const goToPage = (page)=>{navigate(page)} 
-    const account = useAccount({
+    const {account,isConnected} = useAccount({
         onDisconnect() {
           console.log('Disconnected')
           goToPage('/Connect')
@@ -15,9 +15,12 @@ export default function UserPage() {
 
   return (
     <>
+    <div>
       <h3>Hello User!</h3>
       <Web3Button/>
-      <button onClick={()=>goToPage("/")}> Home</button>
+    </div>
+    <button onClick={()=>goToPage("/Valida")}> Validar Ticket</button>
+    <button onClick={()=>goToPage("/")}> Home</button>
     </>
   )
 }

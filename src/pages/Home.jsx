@@ -4,9 +4,7 @@ export default function Home() {
 
     const navigate = useNavigate();
     const goToPage = (page)=>{navigate(page)} 
-     // function goToPage(page){
-    //     navigate(page);
-    // } mesma coisa que a linha de cima
+  
   return (
     <>
       <h3>Hello</h3>

@@ -10,8 +10,9 @@ import Vite from './pages/Vite'
 import Home from './pages/Home';
 import Connect from './pages/Connect'
 import UserPage from './pages/UserPage';
+import ValidaPage from './pages/ValidaPage';
 
-const chains = [mainnet, polygon, polygonMumbai]
+const chains = [polygon, polygonMumbai]
 const projectId = 'ba7804e457fbb5f1375cbdc14e679617'
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })])
@@ -33,6 +34,7 @@ function App() {
         <Route path="/Vite" element={<Vite/>} />
         <Route path="/Connect" element={<Connect/>} />
         <Route path="/User" element={<UserPage/>} />
+        <Route path="/Valida" element={<ValidaPage/>} />
 
       </Routes>
     </BrowserRouter>
