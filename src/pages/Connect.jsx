@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom"
 import { Web3Button, useWeb3ModalTheme } from '@web3modal/react'
+import { useAccount } from 'wagmi'
 
 import logo from '../images/infLogoBlack.png'
 import logoNome from '../images/infinityBlack.png'
@@ -9,6 +10,14 @@ export default function Connection(){
 
     const navigate = useNavigate()
     const goToPage = (page)=>{navigate(page)} 
+    // const { address, isConnecting, isDisconnected } = useAccount()
+
+    const account = useAccount({
+      onConnect({ address, connector, isReconnected }) {
+        console.log('Connected', { address, connector, isReconnected })
+        goToPage("/User")
+      },
+    })
 
     const { theme, setTheme } = useWeb3ModalTheme()
     setTheme({
