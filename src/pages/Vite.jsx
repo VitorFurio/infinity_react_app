@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 
 import reactLogo from '/infLogoBlack.ico'
 import viteLogo from '/infLogo.ico'
-import '../css/Vite.css'
+// import '../css/Vite.css'
 
 export default function Vite() {
   const [count, setCount] = useState(0)

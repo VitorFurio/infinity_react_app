@@ -2,6 +2,7 @@ import {useNavigate} from "react-router-dom"
 import { Web3Button, useWeb3ModalTheme } from '@web3modal/react'
 
 import logo from '../images/infLogoBlack.png'
+import logoNome from '../images/infinityBlack.png'
 import '../css/Connect.css'
 
 export default function Connection(){
@@ -23,10 +24,13 @@ export default function Connection(){
 
     return(
         <>
-        <h2>Validador Infinity V.0.3</h2>
-        <div><img src={logo} className="logo" alt="InflogoBlack" /></div>
+        <div>
+          <img src={logoNome} className="logo" alt="InfNomeBlack" />
+          <img src={logo} className="logo" alt="InflogoBlack" />
+        </div>
         <Web3Button icon="hide" label="Conecte sua carteira!"/>
-        <div><button onClick={()=>goToPage("/")}>Home</button></div>
+        
+        {/* <div><button onClick={()=>goToPage("/")}>Home</button></div> */}
         </>
     )
 }
