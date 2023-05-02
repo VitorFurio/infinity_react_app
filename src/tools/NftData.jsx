@@ -12,7 +12,7 @@ const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticv
 const contract = new ethers.Contract(contractAddress, abi, provider);
 
 export async function getNftByOwner(address) {
-    console.log("entrou na função")
+    // console.log("entrou na função")
     const nfts = [];
     const owners = [];
     for (let i = 1; i < qntdTokens + 1; i++) {
@@ -26,7 +26,7 @@ export async function getNftByOwner(address) {
             nfts.push(owners[i].id);
         }
     }
-    console.log(nfts)
+    // console.log(nfts)
     return nfts;
 }
 
