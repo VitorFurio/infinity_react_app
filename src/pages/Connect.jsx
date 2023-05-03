@@ -2,6 +2,8 @@ import {useNavigate} from "react-router-dom"
 import { Web3Button, useWeb3ModalTheme } from '@web3modal/react'
 import { useAccount } from 'wagmi'
 
+import {writeUserData} from '../tools/FireBaseFunctions'
+
 import logo from '../images/infLogoBlack.png'
 import logoNome from '../images/infinityBlack.png'
 import '../css/Connect.css'
@@ -15,7 +17,8 @@ export default function Connection(){
     const account = useAccount({
       onConnect({ address, connector, isReconnected }) {
         console.log('Connected', { address, connector, isReconnected })
-        goToPage("/User")
+        writeUserData(address);
+        goToPage("/Valida")
       },
     })
 

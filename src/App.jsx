@@ -30,7 +30,8 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/" element={<Connect/>} />
+        <Route path="/Home" element={<Home/>} />
         <Route path="/Vite" element={<Vite/>} />
         <Route path="/Connect" element={<Connect/>} />
         <Route path="/User" element={<UserPage/>} />
