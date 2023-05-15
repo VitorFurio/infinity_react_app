@@ -1,0 +1,25 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 3em;
+    margin-bottom: 1em;
+  }
+
+  .check-button {
+  background-color: #50DA6A;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  color: #fff;
+}
+
+.utilizar-button {
+  background-color: #8600FF;
+  color: #fff;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}

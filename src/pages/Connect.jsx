@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 import { Web3Button, useWeb3ModalTheme } from '@web3modal/react'
 import { useAccount } from 'wagmi'
 
@@ -6,10 +6,10 @@ import {writeUserData} from '../tools/FireBaseFunctions'
 
 import logo from '../images/infLogoBlack.png'
 import logoNome from '../images/infinityBlack.png'
-import '../css/Connect.css'
+import '../css/logo.css'
 
 export default function Connection(){
-
+    const { TypeOfValidation } = useParams();
     const navigate = useNavigate()
     const goToPage = (page)=>{navigate(page)} 
     // const { address, isConnecting, isDisconnected } = useAccount()
@@ -18,7 +18,12 @@ export default function Connection(){
       onConnect({ address, connector, isReconnected }) {
         console.log('Connected', { address, connector, isReconnected })
         writeUserData(address);
-        goToPage("/Valida")
+        if(TypeOfValidation==="Check"){
+          goToPage("/Check")
+        }else{
+          goToPage("/Valida")
+        }
+        
       },
     })
 
@@ -41,7 +46,7 @@ export default function Connection(){
           <img src={logo} className="logo" alt="InflogoBlack" />
         </div>
         <Web3Button icon="hide" label="Conecte sua carteira!"/>
-        
+        <p>Type of Validation {TypeOfValidation}</p>
         {/* <div><button onClick={()=>goToPage("/")}>Home</button></div> */}
         </>
     )

@@ -26,7 +26,7 @@ export default function ValidaPage() {
       },
       onDisconnect() {
         console.log('Disconnected');
-        goToPage("/Connect")
+        goToPage("/Home")
       },
     })
 

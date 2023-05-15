@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useParams} from 'react-router-dom'
 
 import reactLogo from '/infLogoBlack.ico'
 import viteLogo from '/infLogo.ico'
 // import '../css/Vite.css'
 
 export default function Vite() {
+  const { id } = useParams();
   const [count, setCount] = useState(0)
   const navigate = useNavigate()
   const goToPage = (page)=>{navigate(page)} 
@@ -33,6 +34,7 @@ export default function Vite() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <p>Parâmetro ID: {id}</p>
     </>
   )
 }
