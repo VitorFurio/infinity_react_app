@@ -73,7 +73,7 @@ export default function ValidaPage() {
   return (
     <>
       {validado ? <h3>NFTs encontradas: {nfts.join(", ")}</h3> : <h3>Validando seus tickets</h3>}
-      {validado ? <Message message={message} success={success}/> : <Loading/>}
+      {validado ? <Message message={message} success={success}/> : <Loading message={"Buscando dados na Blockchain..."}/>}
       {validado ? <button onClick={()=>Desconectar()}>Desconectar</button> : <p> Isso pode demorar um pouco.</p>}
     </>
   )

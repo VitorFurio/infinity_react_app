@@ -12,6 +12,7 @@ import Connect from './pages/Connect'
 import UserPage from './pages/UserPage';
 import ValidaPage from './pages/ValidaPage';
 import CheckTicket from './pages/CheckTicket';
+import ValidaPageV2 from './pages/ValidaPageV2';
 
 const chains = [polygon, polygonMumbai]
 const projectId = 'ba7804e457fbb5f1375cbdc14e679617'
@@ -37,6 +38,7 @@ function App() {
         <Route path="/Connect/:TypeOfValidation" element={<Connect/>} />
         <Route path="/User" element={<UserPage/>} />
         <Route path="/Valida" element={<ValidaPage/>} />
+        <Route path="/ValidaV2" element={<ValidaPageV2/>} />
         <Route path="/Check" element={<CheckTicket/>} />
 
       </Routes>

@@ -20,8 +20,10 @@ export default function Connection(){
         writeUserData(address);
         if(TypeOfValidation==="Check"){
           goToPage("/Check")
-        }else{
+        }else if(TypeOfValidation==="Valida"){
           goToPage("/Valida")
+        }else if(TypeOfValidation==="ValidaV2") {
+          goToPage("/ValidaV2")
         }
         
       },
