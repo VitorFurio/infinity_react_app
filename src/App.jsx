@@ -15,7 +15,7 @@ import CheckTicket from './pages/CheckTicket';
 import ValidaPageV2 from './pages/ValidaPageV2';
 
 const chains = [polygon, polygonMumbai]
-const projectId = 'ba7804e457fbb5f1375cbdc14e679617'
+const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })])
 const wagmiClient = createClient({
