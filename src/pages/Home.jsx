@@ -17,6 +17,7 @@ export default function Home() {
       <button className="check-button" onClick={()=>goToPage("/Connect/Check")}> Verificar tokens</button>
       <button className="utilizar-button" onClick={()=>goToPage("/Connect/Valida")}> Utilizar tokens (v1)</button>
       <button className="utilizar-button" onClick={()=>goToPage("/Connect/ValidaV2")}> Utilizar tokens (v2)</button>
+      <button className="utilizar-button" onClick={()=>goToPage("/Connect/Sign")}> Assina Ticket</button>
     </>
   )
 }

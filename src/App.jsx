@@ -13,6 +13,7 @@ import UserPage from './pages/UserPage';
 import ValidaPage from './pages/ValidaPage';
 import CheckTicket from './pages/CheckTicket';
 import ValidaPageV2 from './pages/ValidaPageV2';
+import SignPage from './pages/SignPage';
 
 const chains = [polygon, polygonMumbai]
 const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID
@@ -39,6 +40,7 @@ function App() {
         <Route path="/User" element={<UserPage/>} />
         <Route path="/Valida" element={<ValidaPage/>} />
         <Route path="/ValidaV2" element={<ValidaPageV2/>} />
+        <Route path="/Sign" element={<SignPage/>} />
         <Route path="/Check" element={<CheckTicket/>} />
 
       </Routes>

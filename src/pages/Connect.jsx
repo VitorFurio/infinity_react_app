@@ -24,6 +24,8 @@ export default function Connection(){
           goToPage("/Valida")
         }else if(TypeOfValidation==="ValidaV2") {
           goToPage("/ValidaV2")
+        }else if(TypeOfValidation==="Sign") {
+          goToPage("/Sign")
         }
         
       },
