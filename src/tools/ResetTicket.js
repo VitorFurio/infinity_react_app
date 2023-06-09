@@ -9,12 +9,13 @@ async function resetTicket() {
     const contractAddress = '0xcfDd86Ff1f4db29A44BD3487CFF1EE601C0338ff';
     const abi = contractABI;
     
-    const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/'+INFURA_ID);
+    // const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/'+INFURA_ID);
+    const provider = new ethers.providers.JsonRpcProvider('https://rpc-mumbai.maticvigil.com');
     const signer = new ethers.Wallet(privateKey, provider);
  
     const contract = new ethers.Contract(contractAddress, abi, signer);
-    // const transaction = await contract.ResetTicket(2);
-    const transaction = await contract.UseTicket(2);
+    const transaction = await contract.ResetTicket(7);
+    // const transaction = await contract.UseTicket(7);
 
     const transactionReceipt = await transaction.wait();
 
@@ -26,7 +27,7 @@ async function resetTicket() {
       return 0;
     }
   } catch (error) {
-    console.log('Ocorreu um erro:', error.error.reason);
+    console.log('Ocorreu um erro:', error);
     return 0;
   }
 }

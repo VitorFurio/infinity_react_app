@@ -3,7 +3,7 @@ import { useAccount, useDisconnect, useContractRead, useContractWrite, useWaitFo
 import { useState, useEffect } from 'react';
 
 import { BigNumber} from 'ethers'
-
+import {polygonMumbai} from 'wagmi/chains'
 import resetTicket from '../tools/ResetTicket';
 
 import Loading from "../componentes/Loading";
@@ -34,6 +34,7 @@ export default function SignPage() {
     })
 
      const contractRead = useContractRead({
+      chainId: polygonMumbai.id,
       address: '0xcfDd86Ff1f4db29A44BD3487CFF1EE601C0338ff',
       abi: contractABI,
       functionName: 'GetNotUsedTicket',
