@@ -11,6 +11,9 @@ import contractABI from "../contracts/InfinityTicketABI.json"
 let success = false;
 
 export default function ValidaPageV2() {
+
+    const contractAddress = '0xD4cC2e0fe8feFb4D230Fdf7bADBE04FfAebF67a7';
+
     const [nfts, setNfts] = useState([]);
     const [message, setMessage] = useState("")
     const navigate = useNavigate();
@@ -32,7 +35,7 @@ export default function ValidaPageV2() {
     })
 
      const contractRead = useContractRead({
-      address: '0xcfDd86Ff1f4db29A44BD3487CFF1EE601C0338ff',
+      address: contractAddress,
       abi: contractABI,
       functionName: 'GetNotUsedTicket',
       args: [address],
@@ -62,10 +65,10 @@ export default function ValidaPageV2() {
 
 
     const contractWrite = useContractWrite({
-      address: '0xcfDd86Ff1f4db29A44BD3487CFF1EE601C0338ff',
+      address: contractAddress,
       abi: contractABI,
-      functionName: 'UseFirstTicket',
-      // args: [contractRead.data[0].toNumber()],
+      functionName: 'UseTicket',
+      args: [contractRead.data[0].toNumber()],
       gas: 1_000_000n,
       onError(error) {
         console.log('Error writing contract', error.message)
@@ -75,7 +78,6 @@ export default function ValidaPageV2() {
       },
       onSuccess(data) {
         console.log('Success writing contract', data)
-        // success=true;
         SetLoadingMessage("Aguardando a transação "+data.hash+" ser aprovada...")
       },
     })
@@ -99,9 +101,6 @@ export default function ValidaPageV2() {
     },
   })
 
-
-
-
     // const { config } = usePrepareContractWrite({
     //   address: '0xcfDd86Ff1f4db29A44BD3487CFF1EE601C0338ff',
     //   abi: contractABI,
@@ -114,42 +113,6 @@ export default function ValidaPageV2() {
     //   },
     // })
     // const { dataWrite, isLoadingWrite, isSuccess, write } = useContractWrite(config)
-
-   
-
-    
-
-    // async function ValidaTicket(nfts){
-    //   console.log("Nfts: "+nfts)
-    //   if(validado) return;
-    //   if(nfts.length===0){
-    //     console.log("Não há itens válidos")
-    //     setMessage("Não há itens válidos nesta carteira");
-    //     success=false;
-    //     validado=true;
-    //   }else{
-    //     for (let i = 0; i < nfts.length; i++) {
-    //         let item =nfts[i];
-    //         let valorItem = await getItem(item);
-    //         if(valorItem==false){
-    //           setItem(item,true)
-    //           success=true;
-    //           console.log("Entrada permitida com o item "+item+"!");
-    //           setMessage(`Item ${item} utilizado!`)
-    //           break;
-    //         }else{
-    //           console.log("Item "+item+" já foi utilizado.");
-    //           // setMessage("item: "+item+" já foi utilizado")
-    //           // setSuccess(false)
-    //         }
-    //     }
-    //     if(!success){
-    //       console.log("Todos os itens da carteira já foram utilizados.");
-    //       setMessage("Todos os itens da carteira já foram utilizados.")
-    //     }
-    //     validado=true;
-    //   }
-    // }
 
     function Desconectar(){
       console.log('Desconectando...')

@@ -2,11 +2,11 @@ import { ethers } from 'ethers';
 
 import contractABI from "../contracts/InfinityTicketABI.json"
 
-async function resetTicket() {
+async function UseTicket(userAddress) {
   try {
     const INFURA_ID = import.meta.env.VITE_INFURA_API_KEY;
     const privateKey = import.meta.env.VITE_PRIVATE_KEY; 
-    const contractAddress = '0xcfDd86Ff1f4db29A44BD3487CFF1EE601C0338ff';
+    const contractAddress = '0xD4cC2e0fe8feFb4D230Fdf7bADBE04FfAebF67a7';
     const abi = contractABI;
     
     // const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/'+INFURA_ID);
@@ -14,8 +14,9 @@ async function resetTicket() {
     const signer = new ethers.Wallet(privateKey, provider);
  
     const contract = new ethers.Contract(contractAddress, abi, signer);
-    const transaction = await contract.ResetTicket(7);
-    // const transaction = await contract.UseTicket(7);
+   
+    const transaction = await contract.UseFirstTicket(userAddress);
+    // const transaction = await contract.ResetTicket(2);
 
     const transactionReceipt = await transaction.wait();
 
@@ -32,4 +33,4 @@ async function resetTicket() {
   }
 }
 
-export default resetTicket;
+export default UseTicket;
