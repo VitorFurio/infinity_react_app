@@ -15,7 +15,8 @@ async function UseTicket(userAddress) {
  
     const contract = new ethers.Contract(contractAddress, abi, signer);
    
-    const transaction = await contract.UseFirstTicket(userAddress);
+    const gasLimit = 1000000;
+    const transaction = await contract.UseFirstTicket(userAddress,{ gasLimit });
     // const transaction = await contract.ResetTicket(2);
 
     const transactionReceipt = await transaction.wait();
