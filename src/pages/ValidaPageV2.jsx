@@ -67,7 +67,7 @@ export default function ValidaPageV2() {
     const contractWrite = useContractWrite({
       address: contractAddress,
       abi: contractABI,
-      functionName: 'UseTicket',
+      functionName: 'UseFirstTicket',
       args: [contractRead.data[0].toNumber()],
       gas: 1_000_000n,
       onError(error) {
